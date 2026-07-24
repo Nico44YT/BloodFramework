@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "blood_type",
+      "prefix": "blood_type/"
+    }
+  ]
+}

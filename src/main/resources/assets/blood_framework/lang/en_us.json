@@ -1,0 +1,10 @@
+{
+  "command.blood_framework.get.feedback": "%s blood type is %s",
+  "command.blood_framework.blood_type_not_found": "Blood type %s does not exist",
+
+  "blood_type.blood_framework.ender.name": "Ender",
+  "blood_type.blood_framework.living.name": "Living",
+  "blood_type.blood_framework.none.name": "None",
+  "blood_type.blood_framework.rotten.name": "Rotten",
+  "blood_type.blood_framework.sculk.name": "Sculk"
+}

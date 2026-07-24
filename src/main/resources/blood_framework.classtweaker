@@ -1,0 +1,5 @@
+classTweaker v1 named
+
+inject-interface net/minecraft/entity/LivingEntity nico/bloodframework/api/EntityBloodTypeProvider
+accessible field net/minecraft/item/ItemStack item Lnet/minecraft/item/Item;
+mutable field net/minecraft/item/ItemStack item Lnet/minecraft/item/Item;
