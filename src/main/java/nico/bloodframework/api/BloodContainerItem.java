@@ -44,6 +44,6 @@ public interface BloodContainerItem {
     }
 
     default boolean canBeFilledWithBlood(ItemStack stack) {
-        return true;
+        return !hasBloodInstance(stack);
     }
 }
