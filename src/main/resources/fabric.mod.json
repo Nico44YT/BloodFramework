@@ -12,9 +12,6 @@
   "icon": "assets/blood_framework/icon.png",
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": [
-      "nico.bloodframework.client.BloodframeworkDataGenerator"
-    ],
     "client": [
       "nico.bloodframework.client.BloodframeworkClient"
     ],
