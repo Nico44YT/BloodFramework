@@ -14,7 +14,7 @@ public interface BloodContainerItem {
     }
 
     static ItemStack setBloodInstance(BloodInstance bloodInstance, ItemStack stack) {
-        if(stack.getItem() instanceof BloodContainerItem containerItem && !containerItem.canBeFilledWithBlood(stack)) return stack;
+        if(stack.getItem() instanceof BloodContainerItem containerItem && !containerItem.canBeFilledWithBlood(stack) && bloodInstance != null) return stack;
 
         if (bloodInstance == null) {
             stack.getOrCreateNbt().remove(NBT_KEY);
