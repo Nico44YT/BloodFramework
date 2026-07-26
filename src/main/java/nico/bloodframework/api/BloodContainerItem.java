@@ -8,13 +8,30 @@ public interface BloodContainerItem {
     String NBT_KEY = "BloodInstance";
 
     static BloodInstance getBloodInstance(ItemStack stack) {
+        if(!(stack.getItem() instanceof BloodContainerItem bloodContainerItem)) return null;
+        return ((BloodContainerItem)stack.getItem()).readBloodInstance(stack);
+    }
+
+    static ItemStack setBloodInstance(BloodInstance bloodInstance, ItemStack stack) {
+        return ((BloodContainerItem)stack.getItem()).writeBloodInstance(bloodInstance, stack);
+    }
+
+    static boolean hasBloodInstance(ItemStack stack) {
+        return ((BloodContainerItem)stack.getItem()).containsBloodInstance(stack);
+    }
+
+    default boolean canFillWithBlood(ItemStack stack) {
+        return !hasBloodInstance(stack);
+    }
+
+    default BloodInstance readBloodInstance(ItemStack stack) {
         if (!hasBloodInstance(stack)) return null;
 
         return BloodInstance.fromNbt(stack.getNbt().getCompound(NBT_KEY));
     }
 
-    static ItemStack setBloodInstance(BloodInstance bloodInstance, ItemStack stack) {
-        if(stack.getItem() instanceof BloodContainerItem containerItem && !containerItem.canBeFilledWithBlood(stack) && bloodInstance != null) return stack;
+    default ItemStack writeBloodInstance(BloodInstance bloodInstance, ItemStack stack) {
+        if(stack.getItem() instanceof BloodContainerItem containerItem && !containerItem.canFillWithBlood(stack) && bloodInstance != null) return stack;
 
         if (bloodInstance == null) {
             stack.getOrCreateNbt().remove(NBT_KEY);
@@ -39,11 +56,7 @@ public interface BloodContainerItem {
         return stack;
     }
 
-    static boolean hasBloodInstance(ItemStack stack) {
+    default boolean containsBloodInstance(ItemStack stack) {
         return stack.hasNbt() && stack.getNbt() != null && stack.getNbt().contains(NBT_KEY);
-    }
-
-    default boolean canBeFilledWithBlood(ItemStack stack) {
-        return !hasBloodInstance(stack);
     }
 }
