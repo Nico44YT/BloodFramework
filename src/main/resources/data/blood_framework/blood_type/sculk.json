@@ -1,4 +1,5 @@
 {
   "name": "blood_type.blood_framework.sculk.name",
-  "texture": "minecraft:textures/block/sculk.png"
+  "texture": "minecraft:textures/block/sculk.png",
+  "color": 338482
 }

@@ -53,6 +53,10 @@ public class BloodInstance {
         return bloodType;
     }
 
+    public int getColor() {
+        return BloodTypeDataLoader.getData().get(getBloodType()).color();
+    }
+
     public long getTime() {
         return time;
     }
