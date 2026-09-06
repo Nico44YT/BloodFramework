@@ -38,9 +38,29 @@ Custom blood type definition:
 ````json
 {
   "name": "blood_type.mod_id.custom_type_1.name",
-  "texture": "mod_id:textures/blood_type/custom_type_1.png"
+  "texture": "mod_id:textures/blood_type/custom_type_1.png",
+  "color": "0xFF_FF_FF_FF"
 }
 ````
+
+The texture field can have an optional tint value:
+````json
+{
+  "name": "blood_type.mod_id.custom_type_1.name",
+  "texture": {
+    "file": "mod_id:textures/blood_type/custom_type_1.png",
+    "tint": "0xFF_FF_FF_FF"
+  },
+  "color": "0xFF_FF_FF_FF"
+}
+````
+
+The color and tint field can both either be a hexadecimal value or a simple integer
+`````json
+"color": "0xFF_FF_FF_FF",
+"color": 4294967295
+`````
+
 
 Add a custom blood texture map like these:
 
