@@ -1,5 +1,5 @@
 {
   "name": "blood_type.blood_framework.living.name",
   "texture": "blood_framework:textures/blood_type/living.png",
-  "color": 10232864
+  "color": "0x9C2420"
 }
