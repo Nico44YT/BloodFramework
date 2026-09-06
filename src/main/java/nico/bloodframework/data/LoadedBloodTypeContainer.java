@@ -21,6 +21,7 @@ public record LoadedBloodTypeContainer(String translationKey, Identifier identif
     }
 
     public void write(PacketByteBuf packetByteBuf) {
+        packetByteBuf.writeString(translationKey);
         packetByteBuf.writeIdentifier(identifier);
         packetByteBuf.writeIdentifier(texture);
         packetByteBuf.writeInt(color);
