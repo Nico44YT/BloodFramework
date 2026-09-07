@@ -43,7 +43,7 @@ Custom blood type definition:
 }
 ````
 
-The texture field can have an optional tint value:
+The texture field can have an optional tint value in ARGB format:
 ````json
 {
   "name": "blood_type.mod_id.custom_type_1.name",
